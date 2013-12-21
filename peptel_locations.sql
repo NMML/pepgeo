@@ -1,0 +1,20 @@
+CREATE FOREIGN TABLE telemetry.peptel_locations (
+        locid integer,
+	deployid varchar, 
+	speno varchar,
+	projectid varchar,
+	species varchar,
+	deploydate timestamptz,
+	tagtype varchar,
+	age varchar,
+	sex varchar,
+	datadatetime timestamptz,
+	datahour varchar,
+	quality varchar,
+	latitude numeric,
+	longitude numeric,
+	error_radius numeric,
+	error_semi_major_axis numeric,
+	error_semi_minor_axis numeric,
+	error_ellipse_orientation numeric
+	) SERVER raja OPTIONS (schema 'PEPTEL', table 'LOCATIONS');
