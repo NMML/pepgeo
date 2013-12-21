@@ -34,7 +34,7 @@ CREATE INDEX fmclogs_geom_idx
 
 TRUNCATE TABLE surveys.fmclogs;      
 
-SELECT INTO surveys.fmclogs (SELECT * FROM pepsurveys_fmclogs);
+SELECT INTO surveys.fmclogs (SELECT 			dt_utc,flightid,gpslat,gpslong,gpsalt,gpsspd,gpshead,roll,pitch,heading,baroalt,effort FROM pepsurveys_fmclogs);
 
 UPDATE surveys.fmclogs SET geom = ST_SetSRID(ST_MakePoint(gpslong, gpslat), 4326);
 
